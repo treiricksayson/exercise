@@ -1,10 +1,11 @@
-package com.solidprinciple.exercise.web;
+package com.solidprinciple.exercise.service;
 
-import java.text.NumberFormat;
 import org.springframework.stereotype.Component;
 
+import java.text.NumberFormat;
+
 @Component
-public class TwentyPercentOffWithCapped implements CalculateDiscount {
+public class TwentyPercentOffWithCapped implements DiscountCalculator {
 
     private final NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
@@ -16,8 +17,8 @@ public class TwentyPercentOffWithCapped implements CalculateDiscount {
     }
 
     @Override
-    public Boolean supports(String voucher) {
-        return voucher.equalsIgnoreCase("20PercentOffCapped150");
+    public Boolean supports(Voucher voucher) {
+        return voucher.equals(Voucher.TWENTY_PERCENT_OFF_CAPPED_150);
     }
 
 }

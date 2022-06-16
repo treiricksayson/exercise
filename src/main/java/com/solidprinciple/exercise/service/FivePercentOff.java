@@ -1,22 +1,22 @@
-package com.solidprinciple.exercise.web;
+package com.solidprinciple.exercise.service;
 
 import java.text.NumberFormat;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FiftyPesosOff implements CalculateDiscount {
+public class FivePercentOff implements DiscountCalculator {
 
     private final NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
     @Override
     public String calculate(Double orderTotal) {
-        Double discountedPrice = orderTotal - 50;
+        Double discountedPrice = orderTotal - orderTotal * 0.05;
         return formatter.format(discountedPrice);
     }
 
     @Override
-    public Boolean supports(String voucher) {
-        return voucher.equalsIgnoreCase("50PesosOff");
+    public Boolean supports(Voucher voucher) {
+        return voucher.equals(Voucher.FIVE_PERCENT_OFF);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.solidprinciple.exercise.web;
+package com.solidprinciple.exercise.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ public class CalculateService {
 
     private final DiscountOperation discountOperation;
 
-    public String calculateDiscount(Double orderTotal, String voucher) {
+    public String calculateDiscount(Double orderTotal, Voucher voucher) {
         return discountOperation.calculateDiscount(orderTotal, voucher);
     }
 
