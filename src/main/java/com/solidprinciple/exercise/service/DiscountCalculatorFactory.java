@@ -8,7 +8,7 @@ import java.util.Collection;
 
 @Component
 @RequiredArgsConstructor
-public class DiscountOperation {
+public class DiscountCalculatorFactory {
 
     private final Collection<DiscountCalculator> discountCalculators;
 

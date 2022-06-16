@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CalculateService {
 
-    private final DiscountOperation discountOperation;
+    private final DiscountCalculatorFactory discountCalculatorFactory;
 
     public String calculateDiscount(Double orderTotal, Voucher voucher) {
-        return discountOperation.calculateDiscount(orderTotal, voucher);
+        return discountCalculatorFactory.calculateDiscount(orderTotal, voucher);
     }
 
 }
