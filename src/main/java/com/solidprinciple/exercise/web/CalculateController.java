@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.InvalidParameterException;
 import java.text.NumberFormat;
 
-@RequiredArgsConstructor
 @RestController
 public class CalculateController {
 
