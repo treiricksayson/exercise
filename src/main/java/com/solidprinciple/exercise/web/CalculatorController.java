@@ -8,7 +8,7 @@ import java.security.InvalidParameterException;
 import java.text.NumberFormat;
 
 @RestController
-public class CalculateController {
+public class CalculatorController {
 
     @GetMapping("calculate/discount")
     public String calculateDiscount(@RequestParam("orderTotal") Double orderTotal,
